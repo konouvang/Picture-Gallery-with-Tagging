@@ -14,11 +14,12 @@ router.get('/', (req,res) => {
         })
 });
 
+// The column for "path" is not-null, which means I need to put a value in Image
 router.post('/', (req,res) => {
-    const queryString = `INSERT INTO "images" ("title")
-                            VALUES ($1);`;
+    const queryString = `INSERT INTO "images" ("title", "path")
+                            VALUES ($1), ($2);`;
 
-    pool.query(queryString, [req.body.title])
+    pool.query(queryString, [req.body.title], [req.body.path])
         .then((response) => {
             res.sendStatus(201);
         })
