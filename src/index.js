@@ -43,6 +43,7 @@ const storeInstance = createStore(
     combineReducers({
         images,
         tags,
+        
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
