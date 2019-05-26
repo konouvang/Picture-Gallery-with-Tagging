@@ -18,7 +18,7 @@ router.post('/', (req,res) => {
     const queryString = `INSERT INTO "tags" ("name")
                             VALUES ($1);`;
 
-    pool.query(queryString, [req.body.name])
+    pool.query(queryString, [req.body.tagName])
         .then((response) => {
             res.sendStatus(201);
         })

@@ -19,7 +19,7 @@ router.post('/', (req,res) => {
     const queryString = `INSERT INTO "images" ("title", "path")
                             VALUES ($1), ($2);`;
 
-    pool.query(queryString, [req.body.title], [req.body.path])
+    pool.query(queryString, [req.body.title, req.body.path])
         .then((response) => {
             res.sendStatus(201);
         })
