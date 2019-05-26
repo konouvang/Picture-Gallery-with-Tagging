@@ -23,7 +23,7 @@ class App extends Component {
 // Dispatches images from GET call to redux
   dispatchImagesToRedux = () => {
     getImages().then((response) => {
-      console.log(response)
+      console.log(response.data)
       this.props.dispatch({
         type: 'SET_IMAGES',
         payload: response.data,
@@ -33,9 +33,18 @@ class App extends Component {
 
   // Renders the entire app on the DOM
   render() {
+    console.log(this.props.reduxState.images);
+    const imagesHTML = this.props.reduxState.images.map((images, index) => {
+      return (
+        <div key={index}>
+          <img src={images} />
+        </div>
+      )
+    })
     return (
       <div className="App">
         <p>Empty Page</p>
+        {imagesHTML}
       </div>
     );
   }
