@@ -26,7 +26,7 @@ class TagList extends Component {
     }
 
     render() {
-        const tagElement = this.props.reduxState.tagsReducer.map((tagData, tagIndex) => {
+        const tagElement = this.props.reduxState.tags.map((tagData, tagIndex) => {
             return ( <div key={tagIndex} onClick={this.clickTag} data-id={tagData.id}>
                 {tagData.name}
             </div>
@@ -36,7 +36,7 @@ class TagList extends Component {
         return (
             <div>
                 {tagElement}
-                {this.props.reduxState.imagesTagsReducer.tag_id}
+                {this.props.reduxState.imageTags.tag_id}
             </div>
         )
     }
