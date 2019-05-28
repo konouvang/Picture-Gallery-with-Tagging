@@ -12,7 +12,7 @@ app.use(bodyParser.json()); // needed for angular requests
 app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
-app.use('/images', images);
+app.use('/image', images);
 app.use('/tags', tags);
 app.use('/images/tags', imagestags);
 
