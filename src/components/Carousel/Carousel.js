@@ -13,7 +13,7 @@ class Carousel extends Component {
     changeImageNext = (event) => {
         let payload = 0;
 
-        if (this.props.reduxState.currentImage + 1 > this.props.reduxState.imagesReducer.length - 1) {
+        if (this.props.reduxState.currentImage + 1 > this.props.reduxState.images.length - 1) {
             payload = 0;
         } else {
             payload = this.props.reduxState.currentImage + 1;
@@ -37,7 +37,7 @@ class Carousel extends Component {
 
     render() {
         let renderElement = <div></div>;
-        if (this.props.reduxState.imagesReducer.length > 0) {
+        if (this.props.reduxState.images.length > 0) {
             const currentImage = this.props.reduxState.images[this.props.reduxState.currentImage];
             renderElement = <img src={currentImage.path} alt={currentImage.title} />
         }
