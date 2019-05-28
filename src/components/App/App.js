@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import mapReduxStateToProps from '../../modules/mapReduxStateToProps';
 import Carousel from '../Carousel/Carousel';
 import TagList from '../TagList/TagList';
+import JointTable from '../JointTable/JointTable';
 
 
 
@@ -14,6 +15,7 @@ class App extends Component {
         <p>Empty Page</p>
         <Carousel />
         <TagList />
+        <JointTable />
       </div>
     );
   }
