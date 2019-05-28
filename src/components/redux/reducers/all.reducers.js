@@ -1,7 +1,7 @@
 import images from './images.reducer';
-import tags from './tags.reducer';
-import imageTags from './imageTags.reducer';
-import currentImage from './currentimage.reducer'
+import tags from './tags.reducers';
+import imageTags from './imagesTags.reducers';
+import currentImage from './currentImage.reducer';
 
 export {
     images,

@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
 import axios from 'axios';
 
-function* getImagesTags() {
+function* getImageTags() {
     try {
         const imageTagResponse = yield axios.get('/images/tags/all');
         yield put({
@@ -13,4 +13,4 @@ function* getImagesTags() {
     }
 };
 
-export default getImagesTags;
+export default getImageTags;

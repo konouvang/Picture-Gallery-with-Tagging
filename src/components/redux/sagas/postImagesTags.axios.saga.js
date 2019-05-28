@@ -1,16 +1,16 @@
 import { put } from 'redux-saga/effects';
 import axios from 'axios';
 
-function * postImagesTags(action) {
+function* postImageTag(action) {
     try {
-        const imageTagsResponse = yield axios.post('/images/tags/add', action.payload);
+        const tagResponse = yield axios.post('/images/tags/add', action.payload);
         yield put({
             type: 'SET_IMAGE_TAGS',
-            payload: imageTagsResponse.data
-        });
-    }catch (err) {
-        console.log('error postImageTags HELP', err);
+            payload: tagResponse.data
+        })
+    } catch (err) {
+        console.log('error HELP:', err);
     }
 }
 
-export default postImagesTags;
+export default postImageTag;

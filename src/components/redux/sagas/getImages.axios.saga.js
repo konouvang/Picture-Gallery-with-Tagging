@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
 import axios from 'axios';
 
-function * getImages() {
+function* getImages() {
     try {
         const imageResponse = yield axios.get('/image');
         yield put({
@@ -9,7 +9,7 @@ function * getImages() {
             payload: imageResponse.data
         });
     } catch (err) {
-        console.log('error getImages HELP:', err);
+        console.log('error HELP:', err);
     }
 }
 
