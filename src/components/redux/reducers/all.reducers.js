@@ -1,11 +1,11 @@
-import imagesReducer from './images.reducer';
-import tagsReducer from './tags.reducers';
-import imagesTagsReducer from './imagesTags.reducers'
-import currentImagesReducer from './currentImage.reducer'
+import images from './images.reducer';
+import tags from './tags.reducer';
+import imageTags from './imageTags.reducer';
+import currentImage from './currentimage.reducer'
 
 export {
-    imagesReducer,
-    tagsReducer,
-    imagesTagsReducer,
-    currentImagesReducer
+    images,
+    tags,
+    imageTags,
+    currentImage
 }

@@ -1,5 +1,4 @@
-// Used to store images returned from the server
-const imagesReducer = (state = [], action) => {
+const images = (state = [], action) => {
     switch (action.type) {
         case 'SET_IMAGES':
             return action.payload;
@@ -7,4 +6,5 @@ const imagesReducer = (state = [], action) => {
             return state;
     }
 }
-export default imagesReducer;
+
+export default images;

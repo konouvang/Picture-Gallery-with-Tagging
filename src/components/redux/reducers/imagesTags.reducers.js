@@ -1,11 +1,10 @@
-// Used to store the Joins table for images_tags
-const imagesTagsReducer = (state = [], action) => {
+const imageTags = (state = [], action) => {
     switch (action.type) {
-        case 'SET_IMAGES_TAGS':
+        case 'SET_IMAGE_TAGS':
             return action.payload;
         default:
             return state;
     }
 }
 
-export default imagesTagsReducer;
+export default imageTags;
