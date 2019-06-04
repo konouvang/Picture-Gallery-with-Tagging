@@ -26,17 +26,30 @@ class TagList extends Component {
     }
 
     displayNewTag = (event) => {
-        const tagList=document.getElementById("tagList");
-        document.getElementById("newTag").value=tagList.options(tagList.selectIndex).text;
+        const dropdownValue = event.target.value;
+        this.setState({
+            selectedTag: dropdownValue,
+        });
+    }
+
+    clickAddTag = (event) => {
+        const imageId = this.props.reduxState.imageTags[this.props.reduxState.currentImage].id;
+        const tagId = Number(this.state.selectedTag);
+    
+        this.props.dispatch({
+            type: 'ADD_IMAGE_TAG',
+            payload: {
+                imageId,
+                tagId, 
+            }
+        })
     }
 
     render() {
         const tagElement = this.props.reduxState.tags.map((tagData, tagIndex) => {
             return ( 
-            <option>
-                <div >
+            <option value={tagData.id} key={tagIndex}>
                     {tagData.name}
-                </div>
             </option>
             )
         })
@@ -50,7 +63,7 @@ class TagList extends Component {
                             {tagElement}
                             {this.props.reduxState.imageTags.tag_id}
                         </select>
-                        <p>Tags displayed is: <input type="text" id="newTag"></input></p>
+                        <div><button onClick={this.clickAddTag}>ADD TAG</button></div>
                     </form>
                 </body>
             </div>
