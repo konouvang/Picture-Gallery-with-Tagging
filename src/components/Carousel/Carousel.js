@@ -13,10 +13,10 @@ class Carousel extends Component {
     changeImageNext = (event) => {
         let payload = 0;
 
-        if (this.props.reduxState.currentImage + 1 > this.props.reduxState.images.length - 1) {
+        if (this.props.reduxState.currentImageReducer + 1 > this.props.reduxState.imagesReducer.length - 1) {
             payload = 0;
         } else {
-            payload = this.props.reduxState.currentImage + 1;
+            payload = this.props.reduxState.currentImageReducer + 1;
         }
 
         this.props.dispatch({ type: 'SET_CURRENT_IMAGE', payload: payload });
@@ -25,10 +25,10 @@ class Carousel extends Component {
     changeImageBack = (event) => {
         let payload = 0;
 
-        if (this.props.reduxState.currentImage - 1 < 0) {
-            payload = this.props.reduxState.images.length - 1;
+        if (this.props.reduxState.currentImageReducer - 1 < 0) {
+            payload = this.props.reduxState.imagesReducer.length - 1;
         } else {
-            payload = this.props.reduxState.currentImage - 1;
+            payload = this.props.reduxState.currentImageReducer - 1;
         }
 
         this.props.dispatch({ type: 'SET_CURRENT_IMAGE', payload: payload });
@@ -37,8 +37,8 @@ class Carousel extends Component {
 
     render() {
         let renderElement = <div></div>;
-        if (this.props.reduxState.images.length > 0) {
-            const currentImage = this.props.reduxState.images[this.props.reduxState.currentImage];
+        if (this.props.reduxState.imagesReducer.length > 0) {
+            const currentImage = this.props.reduxState.imagesReducer[this.props.reduxState.currentImageReducer];
             renderElement = <img src={currentImage.path} alt={currentImage.title} />
         }
 

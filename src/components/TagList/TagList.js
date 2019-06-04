@@ -46,7 +46,7 @@ class TagList extends Component {
     }
 
     render() {
-        const tagElement = this.props.reduxState.tags.map((tagData, tagIndex) => {
+        const tagElement = this.props.reduxState.tagsReducer.map((tagData, tagIndex) => {
             return ( 
             <option value={tagData.id} key={tagIndex}>
                     {tagData.name}
@@ -61,7 +61,7 @@ class TagList extends Component {
                         Select your Tag:
                         <select id="tagList" onChange="displayNewTag()">
                             {tagElement}
-                            {this.props.reduxState.imageTags.tag_id}
+                            {this.props.reduxState.imageTagsReducer.tag_id}
                         </select>
                         <div><button onClick={this.clickAddTag}>ADD TAG</button></div>
                     </form>

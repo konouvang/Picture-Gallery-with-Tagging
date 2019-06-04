@@ -1,4 +1,4 @@
-const tags = (state = [], action) => {
+const tagsReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_TAGS':
             return action.payload;
@@ -7,4 +7,4 @@ const tags = (state = [], action) => {
     }
 }
 
-export default tags;
+export default tagsReducer;

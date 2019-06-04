@@ -1,4 +1,4 @@
-const imageTags = (state = [], action) => {
+const imageTagsReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_IMAGE_TAGS':
             return action.payload;
@@ -7,4 +7,4 @@ const imageTags = (state = [], action) => {
     }
 }
 
-export default imageTags;
+export default imageTagsReducer;

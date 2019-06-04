@@ -1,4 +1,4 @@
-const currentImage = (state = 0, action) => {
+const currentImageReducer = (state = 0, action) => {
     switch (action.type) {
         case 'SET_CURRENT_IMAGE':
             return action.payload;
@@ -7,4 +7,4 @@ const currentImage = (state = 0, action) => {
     }
 }
 
-export default currentImage;
+export default currentImageReducer;
